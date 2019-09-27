@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "workspacesLogs/lambda.js",
-        "code": "\n\nexports.handler = async (event) => {\n    // TODO implement\n  var AWS = require('aws-sdk');\n  var workspaces = new AWS.WorkSpaces();\n    \n\n\nvar params = {\n  WorkspaceIds: [\n    'ws-5n920kbkv'\n  ]\n};\n\n    var response = {\n        statusCode: 200,\n        body: JSON.stringify('Hello from Lambda!'),\n    };\n\nworkspaces.describeWorkspacesConnectionStatus(params, function(err, data) {\n  if (err) console.log(err, err.stack); // an error occurred\n  else     console.log(data);           // successful response\n});\n  \n\n\n    return response;\n    \n    \n};\n",
+        "code": "/*\n * Original source: https://docs.aws.amazon.com/lambda/latest/dg/with-s3-example-deployment-pkg.html\n * Retrieved on:    2018-01-19\n */\n\n// Dependencies\nlet AWS = require('aws-sdk');\n",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -65,7 +65,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1569615822740
+    "lastSave": 1569615980266
   },
   "VCS_STATE": {
     "provider": "GitHub",

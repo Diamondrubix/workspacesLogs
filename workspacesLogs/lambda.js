@@ -1,31 +1,7 @@
+/*
+ * Original source: https://docs.aws.amazon.com/lambda/latest/dg/with-s3-example-deployment-pkg.html
+ * Retrieved on:    2018-01-19
+ */
 
-
-exports.handler = async (event) => {
-    // TODO implement
-  var AWS = require('aws-sdk');
-  var workspaces = new AWS.WorkSpaces();
-    
-
-
-var params = {
-  WorkspaceIds: [
-    'ws-5n920kbkv'
-  ]
-};
-
-    var response = {
-        statusCode: 200,
-        body: JSON.stringify('Hello from Lambda!'),
-    };
-
-workspaces.describeWorkspacesConnectionStatus(params, function(err, data) {
-  if (err) console.log(err, err.stack); // an error occurred
-  else     console.log(data);           // successful response
-});
-  
-
-
-    return response;
-    
-    
-};
+// Dependencies
+let AWS = require('aws-sdk');
